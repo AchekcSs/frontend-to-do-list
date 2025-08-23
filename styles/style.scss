@@ -73,6 +73,11 @@ body {
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      transition-duration: 0.2s;
+
+      &:active {
+        transform: scale(0.9);
+      }
     }
   }
 
@@ -111,6 +116,19 @@ body {
       justify-content: center;
       right: 0;
       cursor: pointer;
+      transition-duration: 0.2s;
+
+      &:hover {
+        transform: rotate(90deg);
+
+        & path {
+          stroke: #ff5f57;
+        }
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
     }
   }
 
@@ -131,7 +149,12 @@ body {
       font-size: 16px;
       line-height: 140%;
       cursor: pointer;
-      color: #ff5f57
+      color: #ff5f57;
+      transition-duration: 0.2s;
+
+      &:active {
+        transform: scale(0.9);
+      }
     }
   }
 
@@ -166,6 +189,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition-duration: 0.2s;
 
     &-check {
       width: 20px;
@@ -188,6 +212,10 @@ body {
       justify-content: center;
       padding: 0;
       cursor: pointer;
+    }
+
+    &:hover {
+      border-color: $primary;
     }
   }
 }

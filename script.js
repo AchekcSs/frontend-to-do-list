@@ -3,6 +3,7 @@ const inputAdd = document.getElementById("inputAdd")
 const inputSearch = document.getElementById("inputSearch")
 const buttonAdd = document.getElementById("buttonAdd")
 const buttonDel = document.getElementById("buttonDel")
+const buttonSearch = document.getElementById("buttonSearch")
 const totalCount = document.getElementById("totalCount")
 const items = document.getElementsByTagName("p")
 
@@ -21,7 +22,7 @@ const createItem = (value) => {
   itemButton.classList.add("todo__item-delete")
 
   itemInput.setAttribute("type", "checkbox")
-  itemIcon.setAttribute("src", "/images/remove-icon.svg")
+  itemIcon.setAttribute("src", "/images/delete-icon.svg")
 
   itemText.textContent = value
 
@@ -44,7 +45,6 @@ const createItem = (value) => {
       itemText.style.textDecoration = "none"
     }
   })
-  
 }
 
 buttonAdd.addEventListener("click", () => {
@@ -88,4 +88,8 @@ inputSearch.addEventListener("input", (e) => {
       item.parentNode.style.display = "none"
     }
   })
+})
+
+buttonSearch.addEventListener("click", () => {
+  inputSearch.value = ""
 })
