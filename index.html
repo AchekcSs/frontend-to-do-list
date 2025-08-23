@@ -15,8 +15,8 @@
   <section class="todo">
     <h1 class="todo__title">To Do List</h1>
     <div class="todo__add">
-      <input type="text" class="todo__add-input" placeholder="New task title">
-      <button class="todo__add-button">Add</button>
+      <input type="text" class="todo__add-input" placeholder="New task title" id="inputAdd">
+      <button class="todo__add-button" id="buttonAdd">Add</button>
     </div>
     <div class="todo__search">
       <input type="text" class="todo__search-field" placeholder="Search task">
@@ -29,16 +29,16 @@
         <h2 class="todo__total-text">Total Tasks: </h2>
         <h2 class="todo__total-count">3</h2>
       </div>
-      <button class="todo__info-delete">Delete All</button>
+      <button class="todo__info-delete" id="buttonDel">Delete All</button>
     </div>
-    <ul class="todo__list">
-      <li class="todo__item">
+    <ul class="todo__list" id="list">
+      <!--<li class="todo__item">
         <input type="checkbox" class="todo__item-check">
         <p class="todo__item-text">TO make something to do</p>
         <button class="todo__item-delete">
           <img src="./images/remove-icon.svg" alt="remove icon" width="20" height="20">
         </button>
-      </li>
+      </li>-->
     </ul>
   </section>
 </body>
