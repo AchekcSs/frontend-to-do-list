@@ -90,3 +90,16 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="number"],
+button {
+  stroke: none;
+  border: none;
+  background: none;
+  outline: none;
+}

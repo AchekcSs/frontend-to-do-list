@@ -7,33 +7,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/style.min.css">
   <script src="script.js" type="module" defer></script>
   <title>To-Do list</title>
 </head>
 <body>
   <section class="todo">
-    <h1 class="todo__title"></h1>
+    <h1 class="todo__title">To Do List</h1>
     <div class="todo__add">
-      <input type="text" class="todo__add-input">
-      <button class="todo__add-button"></button>
+      <input type="text" class="todo__add-input" placeholder="New task title">
+      <button class="todo__add-button">Add</button>
     </div>
     <div class="todo__search">
-      <input type="text" class="todo__search-field">
-      <button class="todo__search-button"></button>
+      <input type="text" class="todo__search-field" placeholder="Search task">
+      <button class="todo__search-button">
+        <img src="./images/search-icon.svg" alt="search icon">
+      </button>
     </div>
     <div class="todo__info">
       <div class="todo__info-total">
-        <h2 class="todo__total-text"></h2>
-        <h2 class="todo__total-count"></h2>
+        <h2 class="todo__total-text">Total Tasks: </h2>
+        <h2 class="todo__total-count">3</h2>
       </div>
-      <h2 class="todo__delete-all"></h2>
+      <button class="todo__info-delete">Delete All</button>
     </div>
     <ul class="todo__list">
       <li class="todo__item">
         <input type="checkbox" class="todo__item-check">
-        <p class="todo__item-text"></p>
-        <button class="todo__item-delete"></button>
+        <p class="todo__item-text">TO make something to do</p>
+        <button class="todo__item-delete">
+          <img src="./images/remove-icon.svg" alt="remove icon" width="20" height="20">
+        </button>
       </li>
     </ul>
   </section>
