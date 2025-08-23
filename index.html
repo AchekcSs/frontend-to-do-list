@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="script.js" type="module" defer></script>
+  <title>To-Do list</title>
+</head>
+<body>
+  <section class="todo">
+    <h1 class="todo__title"></h1>
+    <div class="todo__add">
+      <input type="text" class="todo__add-input">
+      <button class="todo__add-button"></button>
+    </div>
+    <div class="todo__search">
+      <input type="text" class="todo__search-field">
+      <button class="todo__search-button"></button>
+    </div>
+    <div class="todo__info">
+      <div class="todo__info-total">
+        <h2 class="todo__total-text"></h2>
+        <h2 class="todo__total-count"></h2>
+      </div>
+      <h2 class="todo__delete-all"></h2>
+    </div>
+    <ul class="todo__list">
+      <li class="todo__item">
+        <input type="checkbox" class="todo__item-check">
+        <p class="todo__item-text"></p>
+        <button class="todo__item-delete"></button>
+      </li>
+    </ul>
+  </section>
+</body>
+</html>
