@@ -1,8 +1,10 @@
 const list = document.getElementById("list")
 const inputAdd = document.getElementById("inputAdd")
+const inputSearch = document.getElementById("inputSearch")
 const buttonAdd = document.getElementById("buttonAdd")
 const buttonDel = document.getElementById("buttonDel")
 const totalCount = document.getElementById("totalCount")
+const items = document.getElementsByTagName("p")
 
 let count = 0
 
@@ -75,4 +77,15 @@ inputAdd.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     buttonAdd.click()
   }
+})
+
+inputSearch.addEventListener("input", (e) => {
+  const currValue = e.target.value.toLowerCase()
+  Array.from(items).forEach(item => {
+    if (item.textContent.toLowerCase().includes(currValue)) {
+      item.parentNode.style.display = "flex"
+    } else {
+      item.parentNode.style.display = "none"
+    }
+  })
 })
