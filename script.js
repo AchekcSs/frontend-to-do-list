@@ -2,6 +2,9 @@ const list = document.getElementById("list")
 const inputAdd = document.getElementById("inputAdd")
 const buttonAdd = document.getElementById("buttonAdd")
 const buttonDel = document.getElementById("buttonDel")
+const totalCount = document.getElementById("totalCount")
+
+let count = 0
 
 const createItem = (value) => {
   const item = document.createElement("li")
@@ -28,6 +31,8 @@ const createItem = (value) => {
 
   itemButton.addEventListener("click", () => {
     item.remove()
+    count--
+    totalCount.textContent = count
   })
 
   itemInput.addEventListener("click", () => {
@@ -49,6 +54,8 @@ buttonAdd.addEventListener("click", () => {
     alert("Введіть щось, перед тим як записувати!")
   } else {
     createItem(inputAdd.value)
+    count++
+    totalCount.textContent = count
     inputAdd.value = ""
   }
 })
@@ -59,4 +66,13 @@ buttonDel.addEventListener("click", () => {
   Array.from(items).forEach((item) => {
     item.remove()
   })
+
+  count = 0
+  totalCount.textContent = count
+})
+
+inputAdd.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    buttonAdd.click()
+  }
 })
