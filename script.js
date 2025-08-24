@@ -6,6 +6,7 @@ const buttonDel = document.getElementById("buttonDel")
 const buttonSearch = document.getElementById("buttonSearch")
 const totalCount = document.getElementById("totalCount")
 const items = document.getElementsByTagName("p")
+const clearIcon = document.getElementById("clearIcon")
 
 let count = 0
 
@@ -44,6 +45,14 @@ const createItem = (value) => {
     } else {
       itemText.style.textDecoration = "none"
     }
+  })
+
+  item.addEventListener("mouseover", () => {
+    itemIcon.setAttribute("src", "/images/red-delete-icon.svg")
+  })
+
+  item.addEventListener("mouseout", () => {
+    itemIcon.setAttribute("src", "/images/delete-icon.svg")
   })
 }
 
@@ -93,3 +102,18 @@ inputSearch.addEventListener("input", (e) => {
 buttonSearch.addEventListener("click", () => {
   inputSearch.value = ""
 })
+
+buttonSearch.addEventListener("mouseover", () => {
+  clearIcon.setAttribute("src", "/images/red-clear-icon.svg")
+})
+
+buttonSearch.addEventListener("mouseout", () => {
+  clearIcon.setAttribute("src", "/images/clear-icon.svg")
+})
+
+
+
+//стилізувати checkbox yes
+//зробити так, щоб при наведенні на item, крім бордера також червоною ставала іконка смітника yes
+//змінити px на rem
+//навести лад у scss
