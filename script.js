@@ -42,6 +42,7 @@ const createItem = (value) => {
   itemInput.addEventListener("click", () => {
     if (itemInput.checked) {
       itemText.style.textDecoration = "line-through"
+      itemText.style.color = "#9d9d9d"
     } else {
       itemText.style.textDecoration = "none"
     }
@@ -110,10 +111,3 @@ buttonSearch.addEventListener("mouseover", () => {
 buttonSearch.addEventListener("mouseout", () => {
   clearIcon.setAttribute("src", "/images/clear-icon.svg")
 })
-
-
-
-//стилізувати checkbox yes
-//зробити так, щоб при наведенні на item, крім бордера також червоною ставала іконка смітника yes
-//змінити px на rem
-//навести лад у scss

@@ -3,56 +3,66 @@ $black: #000;
 $primary: #2c2c2c;
 $white: #fff;
 $text-secondary: #b3b3b3;
-$border: #d9d9d9;
 $white-secondary: #f5f5f5;
+$red: #ff5f57;
 
-$border-radius: 8px;
+$border-radius: 0.5rem;
+
+@mixin flex-align-direction($direction: row, $justify: flex-start) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin border($color: #d9d9d9) {
+  border: solid 1px $color !important;
+}
+
+@mixin font-base($size: 0, $weight: 0, $line-height: 0) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
 
 body {
   font-family: $font-family;
-  background-color: #F5F5F5;
+  font-size: 1rem;
   height: 100vh;
-  padding-top: 100px;
   color: black;
+  background-color: #F5F5F5;
+  padding-top: 6.25rem;
 }
 
 .todo {
-  width: 404px;
+  width: 25.25rem;
   margin: 0 auto;
-  border: solid 1px $border;
+  padding: 1.5rem;
+  @include border;
   border-radius: $border-radius;
   background-color: $white;
-  padding: 24px;
-  box-shadow: 0 4px 4px -4px rgba(12, 12, 13, 0.05), 0 16px 32px -4px rgba(12, 12, 13, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
+  box-shadow: 0 0.25rem 0.25rem -0.25rem rgba(12, 12, 13, 0.05), 0 1rem 2rem -0.25rem rgba(12, 12, 13, 0.1);
+  @include flex-align-direction ($direction: column);
+  gap: 1.5rem;
 
   &__title {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 120%;
+    @include font-base($size: 1.25rem, $weight: 600, $line-height: 120%);
     letter-spacing: -0.2%;
   }
 
   &__add {
-    display: flex;
-    align-items: center;
     width: 100%;
-    justify-content: space-between;
+    @include flex-align-direction($justify: space-between);
 
     &-input {
       width: 285px;
-      height: 40px;
-      border: solid 1px $border !important;
+      height: 2.5rem;
+      @include border;
       border-radius: $border-radius;
-      padding: 12px 12px 12px 16px;
+      padding: 0.75rem 0.75rem 0.75rem 1rem;
       transition-duration: 0.2s;
 
       &::placeholder {
-        width: 400px;
-        font-size: 16px;
         color: $text-secondary
       }
 
@@ -62,16 +72,14 @@ body {
     }
 
     &-button {
-      border: solid 1px $primary;
-      border-radius: $border-radius;
-      padding: 12px;
       width: 55px;
-      height: 40px;
-      background-color: $primary;
+      height: 2.5rem;
       color: $white-secondary;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background-color: $primary;
+      @include border($color: $primary);
+      border-radius: $border-radius;
+      padding: 0.75rem;
+      @include flex-align-direction($justify: center);
       cursor: pointer;
       transition-duration: 0.2s;
 
@@ -82,23 +90,20 @@ body {
   }
 
   &__search {
-    display: flex;
-    align-items: center;
+    @include flex-align-direction($justify: space-between);
     width: 100%;
-    justify-content: space-between;
     position: relative;
 
     &-field {
       width: 100%;
-      height: 40px;
-      border: solid 1px $border !important;
+      height: 2.5rem;
+      @include border;
       border-radius: $border-radius;
-      padding: 12px 35px 12px 16px;
+      padding: 0.75rem 35px 0.75rem 1rem;
       transition-duration: 0.2s;
 
       &::placeholder {
-        width: 400px;
-        font-size: 16px;
+        width: 25rem;
         color: $text-secondary
       }
 
@@ -108,22 +113,16 @@ body {
     }
 
     &-button {
+      width: 2.5rem;
+      height: 2.5rem;
       position: absolute;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       right: 0;
+      @include flex-align-direction($justify: center);
       cursor: pointer;
       transition-duration: 0.2s;
 
       &:hover {
         transform: rotate(90deg);
-
-        & path {
-          stroke: #ff5f57;
-        }
       }
 
       &:active {
@@ -133,23 +132,18 @@ body {
   }
 
   &__info {
-    display: flex;
-    align-items: center;
     width: 100%;
-    justify-content: space-between;
+    @include flex-align-direction($justify: space-between);
 
     &-total {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      @include flex-align-direction;
+      gap: 0.5rem;
     }
 
     &-delete {
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 140%;
+      @include font-base($size: 1rem, $weight: 600, $line-height: 140%);
+      color: $red;
       cursor: pointer;
-      color: #ff5f57;
       transition-duration: 0.2s;
 
       &:active {
@@ -160,57 +154,47 @@ body {
 
   &__total {
     &-text {
+      @include font-base($size: 1rem, $weight: bold, $line-height: 140%);
       color: $black;
-      font-size: 16px;
-      line-height: 140%;
     }
-
+    
     &-count {
+      @include font-base($size: 1rem, $weight: bold, $line-height: 140%);
       color: $black;
-      font-size: 16px;
-      line-height: 140%;
     }
   }
 
   &__list {
     width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 8px;
+    @include flex-align-direction($direction: column);
+    gap: 0.5rem;
   }
 
   &__item {
     width: 100%;
     min-height: 46px;
-    border: solid 1px $border;
+    @include border;
     border-radius: $border-radius;
-    padding: 12px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0.75rem 10px;
+    @include flex-align-direction($justify: space-between);
     transition-duration: 0.2s;
 
     &-check {
-      width: 20px;
-      height: 20px;
+      width: 1.25rem;
+      height: 1.25rem;
       accent-color: $primary;
     }
 
     &-text {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 140%;
+      width: 17rem;
       display: block;
-      width: 272px;
+      @include font-base($size: 1rem, $weight: 400, $line-height: 140%);
     }
 
     &-delete {
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 1.25rem;
+      height: 1.25rem;
+      @include flex-align-direction($justify: center);
       padding: 0;
       cursor: pointer;
     }
