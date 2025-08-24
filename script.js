@@ -1,21 +1,21 @@
-const list = document.getElementById("list")
-const inputAdd = document.getElementById("inputAdd")
-const inputSearch = document.getElementById("inputSearch")
-const buttonAdd = document.getElementById("buttonAdd")
-const buttonDel = document.getElementById("buttonDel")
-const buttonSearch = document.getElementById("buttonSearch")
-const totalCount = document.getElementById("totalCount")
-const items = document.getElementsByTagName("p")
-const clearIcon = document.getElementById("clearIcon")
+const list = document.getElementById("list"),
+  inputAdd = document.getElementById("inputAdd"),
+  inputSearch = document.getElementById("inputSearch"),
+  buttonAdd = document.getElementById("buttonAdd"),
+  buttonDel = document.getElementById("buttonDel"),
+  buttonSearch = document.getElementById("buttonSearch"),
+  totalCount = document.getElementById("totalCount"),
+  items = document.getElementsByTagName("p"),
+  clearIcon = document.getElementById("clearIcon")
 
 let count = 0
 
 const createItem = (value) => {
-  const item = document.createElement("li")
-  const itemInput = document.createElement("input")
-  const itemText = document.createElement("p")
-  const itemButton = document.createElement("button")
-  const itemIcon = document.createElement("img")
+  const item = document.createElement("li"),
+    itemInput = document.createElement("input"),
+    itemText = document.createElement("p"),
+    itemButton = document.createElement("button"),
+    itemIcon = document.createElement("img")
 
   item.classList.add("todo__item")
   itemInput.classList.add("todo__item-check")
